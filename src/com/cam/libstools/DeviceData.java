@@ -30,7 +30,24 @@ public class DeviceData {
 		map.put("previewsizeofheight","1265");
 		map.put("statusbarheight","25");
 		hashdevice.add(map);
-		
+
+        map=new HashMap<String, String>();
+        map.put("MODEL", "GT-S5830");
+        map.put("orentation","portrait");
+        map.put("setcamorentation","90");
+        map.put("previewsizeofwidth","960");
+        map.put("previewsizeofheight","1265");
+        map.put("statusbarheight","25");
+        hashdevice.add(map);
+
+        map=new HashMap<String, String>();
+        map.put("MODEL", "GT-P3100");
+        map.put("orentation","portrait");
+        map.put("setcamorentation","90");
+        map.put("previewsizeofwidth","960");
+        map.put("previewsizeofheight","1265");
+        map.put("statusbarheight","25");
+        hashdevice.add(map);
 	}
 
 

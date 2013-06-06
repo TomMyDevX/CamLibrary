@@ -50,6 +50,7 @@ public void playAutoFocus(boolean isFocus){
 }
 
 public void playFlash(boolean isFlash){
+    if(Deviceinfo.getFlashAvailableOnDevice(activity)){
     Parameters param=cam.getParameters();
     List<String> supportedFlashModes = param.getSupportedFlashModes();
     PrintLog.print(activity.getApplicationContext(),supportedFlashModes.toString());
@@ -83,6 +84,8 @@ public void playFlash(boolean isFlash){
             }
         }
     }
-
+    }else{
+       PrintLog.print(activity.getApplicationContext(),"Not Found Flash On Device.");
+    }
 }
 }

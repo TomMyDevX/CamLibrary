@@ -1,11 +1,9 @@
 package com.libs.deviceinfo;
 
 import android.app.Activity;
-import android.content.Context;
-import android.os.Build;
+import android.content.pm.PackageManager;
 import android.provider.Settings.SettingNotFoundException;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.Display;
 import android.view.Surface;
 import android.view.WindowManager;
@@ -55,6 +53,12 @@ public class Deviceinfo {
             return "reverse landscape";
         }
 	}
-
+    public static boolean getFlashAvailableOnDevice(Activity activity){
+        if(activity.getApplicationContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }
