@@ -1,6 +1,8 @@
 package com.cam.libstools;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.hardware.Camera;
 import android.hardware.Camera.AutoFocusCallback;
 import android.hardware.Camera.Parameters;
@@ -88,4 +90,17 @@ public void playFlash(boolean isFlash){
        PrintLog.print(activity.getApplicationContext(),"Not Found Flash On Device.");
     }
 }
+    public void takePicture(){
+        cam.takePicture(null,null,new Camera.PictureCallback() {
+            @Override
+            public void onPictureTaken(byte[] bytes, Camera camera) {
+                Bitmap bmp= BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                ImagesIO.writeImage(activity,bmp, Integer.parseInt(devicearraydata[2]));
+
+            }
+        });
+
+    }
+
+
 }
