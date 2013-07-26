@@ -48,9 +48,9 @@ public class Deviceinfo {
         case Surface.ROTATION_90:
             return "landscape";
         case Surface.ROTATION_180:
-            return "reverse portrait";
+            return "reverse_portrait";
         default:
-            return "reverse landscape";
+            return "reverse_landscape";
         }
 	}
     public static boolean getFlashAvailableOnDevice(Activity activity){
@@ -60,5 +60,12 @@ public class Deviceinfo {
             return false;
         }
     }
-
+    public static int getStatusBarHeight(Activity ac) {
+        int result = 0;
+        int resourceId = ac.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = ac.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
 }
